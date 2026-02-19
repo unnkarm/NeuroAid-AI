@@ -111,10 +111,10 @@ Risk Report + Dashboard
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
+```
 neuroaid/
-│
 ├── frontend/
 │   ├── public/
 │   ├── src/
@@ -155,8 +155,8 @@ neuroaid/
 ├── .env.example
 ├── README.md
 └── LICENSE
+```
 
----
 
 ## ⚙️ Installation
 
