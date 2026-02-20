@@ -126,9 +126,11 @@ Web Speech API
 
 ## Backend
 
-Node.js
+Python 3.11+
 
-Express.js
+FastAPI → Modern, async-ready, auto docs (/docs)
+
+Pydantic → Data validation & type hints
 
 
 ## AI Microservice
@@ -193,33 +195,55 @@ Example Response:
 📁 GitHub Folder Structure
 neuroaid/
 │
-├── frontend/
-│   ├── public/
+├── frontend/                         # React + Vite frontend
+│   ├── public/                       # Static assets
 │   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
+│   │   ├── components/               # All UI components
+│   │   │   ├── SpeechTest.jsx
+│   │   │   ├── MemoryTest.jsx
+│   │   │   ├── ReactionTest.jsx
+│   │   │   └── RiskDashboard.jsx
+│   │   ├── pages/                    # Screens / pages
+│   │   │   ├── Home.jsx
+│   │   │   └── Results.jsx
+│   │   ├── services/                 # API calls
+│   │   │   └── api.js
 │   │   ├── hooks/
-│   │   ├── services/
-│   │   └── utils/
-│   └── package.json
+│   │   │   └── useFormState.js
+│   │   ├── utils/
+│   │   │   └── helpers.js
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css                 # Tailwind import
+│   ├── package.json
+│   ├── tailwind.config.js
+│   └── vite.config.js
 │
-├── backend/
-│   ├── controllers/
-│   ├── routes/
-│   ├── middleware/
+├── backend/                          # FastAPI backend
+│   ├── main.py                       # FastAPI app entrypoint
+│   ├── routers/
+│   │   └── analyze.py                # /api/analyze endpoint
 │   ├── services/
+│   │   └── ai_service.py             # Feature extraction + scoring
 │   ├── utils/
-│   ├── server.js
-│   └── package.json
+│   │   └── logger.py
+│   ├── models/                        # Optional Pydantic models
+│   ├── config.py                     # Weights, thresholds, dummy paths
+│   ├── requirements.txt
+│   └── README.md                     # How to run backend
 │
-├── ai-service/
-│   ├── app.py
+├── ai-service/                        # Optional separate AI microservice
+│   ├── app.py                         # FastAPI or module for AI
 │   ├── feature_extractor.py
 │   ├── scoring_engine.py
-│   ├── models/
+│   ├── models/                        # Whisper / transformer models
 │   ├── utils/
+│   │   ├── audio_utils.py
+│   │   ├── text_utils.py
+│   │   └── data_processing.py
 │   ├── config.py
-│   └── requirements.txt
+│   ├── requirements.txt
+│   └── README.md
 │
 ├── docs/
 │   ├── architecture.md
