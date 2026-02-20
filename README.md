@@ -113,7 +113,7 @@ Return Risk Report + Visualization
 
 ### 🛠 Tech Stack
 
-Frontend
+## Frontend
 
 React / Next.js
 
@@ -123,13 +123,15 @@ Chart.js
 
 Web Speech API
 
-Backend
+
+## Backend
 
 Node.js
 
 Express.js
 
-AI Microservice
+
+## AI Microservice
 
 Python
 
@@ -139,17 +141,20 @@ HuggingFace Transformers
 
 Whisper (Speech-to-Text)
 
-Database
+
+## Database
 
 Firebase Firestore
 
-Deployment
+
+## Deployment
 
 Vercel (Frontend)
 
 Render (Backend + AI Service)
 
-🧠 AI & Feature Engineering
+
+## 🧠 AI & Feature Engineering
 Speech → text using Whisper
 
 Extract behavioral features
@@ -160,8 +165,9 @@ Weighted risk computation
 
 Generates interpretable risk report
 
-Example API Payload:
 
+## Example API Payload:
+```
 POST /api/analyze
 {
   "speech_audio": "base64-encoded-audio",
@@ -171,8 +177,9 @@ POST /api/analyze
   },
   "reaction_times": [300, 280, 350, 310]
 }
+```
 Example Response:
-
+```
 {
   "speech_score": 72,
   "memory_score": 65,
@@ -180,7 +187,7 @@ Example Response:
   "risk_score": 71.2,
   "risk_level": "Moderate"
 }
-
+```
 ---
 ```
 📁 GitHub Folder Structure
@@ -235,6 +242,7 @@ Doctor dashboard
 PDF medical-style report export
 
 Low-bandwidth rural mode
+
 ---
 
 ### 📌 Why NeuroAid Matters
